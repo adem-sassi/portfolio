@@ -1,0 +1,43 @@
+{# templates/project/read.html.twig #}
+
+
+
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <h1>Project Details</h1>
+
+
+
+    {% if project is not null %}
+
+        <dl>
+                    <img src="{{ asset('uploads/images/' ~ project.image) }}" class="card-img-top w-25" alt="{{ project.name }}">
+
+            <dt>Name:</dt>
+
+            <dd>{{ project.name }}</dd>
+
+
+
+            <dt>Description:</dt>
+
+            <dd>{{ project.description }}</dd>
+
+            {# Ajoutez d'autres propriétés selon votre entité Project #}
+
+        </dl>
+
+    {% else %}
+
+        <p>Project not found.</p>
+
+    {% endif %}
+
+
+
+    <a href="{{ path('projects') }}">Back to List</a>
+
+{% endblock %}

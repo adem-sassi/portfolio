@@ -1,0 +1,24 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<div class="container mt-4">
+		<h2 class="text-white">Liste des utilisateurs</h2>
+		<ul class="list-group">
+			{% for user in users %}
+				<li class="list-group-item d-flex justify-content-between align-items-center">
+					{{ user.email }}
+					-
+					{{ user.roles|join(', ') }}
+					<div class="btn-group" role="group">
+						<a href="/users/{{ user.id }}/ROLE_ADMIN" class="btn btn-success">ADMIN</a>
+						<a href="/users/{{ user.id }}/ROLE_EDIT" class="btn btn-warning">EDIT</a>
+						<a href="/users/{{ user.id }}/ROLE_USER" class="btn btn-primary">USER</a>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="text-center mt-3">
+		<a href="/" class="btn btn-primary">home page</a>
+	</div>
+{% endblock %}

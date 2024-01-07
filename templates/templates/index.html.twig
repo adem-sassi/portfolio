@@ -1,0 +1,200 @@
+{% extends "base.html.twig" %}
+
+
+{% block body %}
+	<div>
+		<div>
+
+			<div class="d-none d-sm-block d-xs-block">
+				<div class="collapse" id="navbarToggleExternalContent" data-bs-theme="secondary">
+					<div class="bg-secondary p-4">
+						<a href="./index.html">_hello</a>
+						<br>
+						<a href="{{ asset('/about') }}">_about-me</a>
+						<br>
+						<a href="{{ asset('/projects') }}">_projects</a>
+						<a href="{{ asset('/skills') }}">_skills</a>
+
+						{% if is_granted("IS_AUTHENTICATED_FULLY") %}
+							<div class="d-flex gap-3">
+								<span>Bienvenue
+									{{app.user.email}}</span>
+								<a href="/logout">Se déconnecter</a>
+							</div>
+						{% else %}
+							<a href="/login">Se connecter</a>
+						{% endif %}
+						<br>
+						<a href="./contact.html">_contact-me</a>
+						<span class="text-body-secondary">Toggleable via the navbar brand.</span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+		<nav class="navbar navbar-dark bg-secondary">
+			<div class="container-fluid">
+				<button class="navbar-toggler d-sm-block d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			</div>
+		</nav>
+	</div>
+	<div class="cadre  ">
+		<table class="table-active table-bordered border-secondary d-sm-none d-md-block d-none d-sm-block">
+			<tr>
+
+				<th class="text-secondary p-2 pp-154 ps-3" id="ademSassi">
+					<span id="ademSassi">adem sassi</span>
+				</th>
+
+				<th>
+					<a href="# " class="text text-white pe-5 ps-5 pb-2 border-bottom border-color">_hello</a>
+				</th>
+
+
+				<th>
+					<a href="{{ asset('/about') }}" class="text text-secondary p-5">_about-me</a>
+				</th>
+				<th>
+					<a href="{{ asset('/projects') }}" class="text text-secondary p-4">_projects</a>
+				</th>
+				<th>
+					<a href="{{ asset('/skills') }}" class="text text-secondary p-4">_skills</a>
+				</th>
+				<th>
+					{% if is_granted("IS_AUTHENTICATED_FULLY") %}
+						<div class="d-flex gap-3 align-items-center">
+							<span class="text-white">Welcome
+								{{ app.user.email }}</span>
+							<a href="/logout" class="btn btn-danger">Se déconnecter</a>
+						</div>
+					{% else %}
+						<a href="/login" class="btn btn-primary">Se connecter</a>
+					{% endif %}
+				</th>
+
+				<th>
+					{% if is_granted('ROLE_ADMIN') %}
+						<div class="mt-3">
+							<a href="/users" class="btn text-secondary">Users</a>
+							{% else %}
+							<th class="w-100"></th>
+						</div>
+					{% endif %}
+				</th>
+				<th>
+					<a href="./contact.html" class="text text-secondary px-4">_contact-me</a>
+				</th>
+
+			</tr>
+
+
+		</table>
+		<div class="container d-sm-none d-md-block d-none d-sm-block">
+			<div class="row">
+				<div class="col-8 ">
+					<p class="  marginn1 text-white  d-flex ">Hi all. I am
+					</p>
+
+					<h1 class=" marginn2 text-white">ADEM SASSI</h1>
+					<h4 class="marginn2 text-primary">> Front-end developer</h4>
+					<p class="marginn3 text-secondary">// Crafting digital wonders with code</p>
+					<p class="marginn2 text-secondary">// you can also see it on my Github page</p>
+					<p class="marginn2 marginneb">
+						<span class="text-primary">const</span>
+						<span class="text-success">gitLabLink</span>
+						<span class="text-white">=</span>
+						<span class="text-danger ">https://github.com/adem-sassi</span>
+
+
+					</p>
+				</div>
+				<div class="col-4">
+
+					<div class="cadre-img marginn0 d-flex flex-column justify-content-between d-sm-none d-md-block d-none d-sm-block">
+						<div>
+							<img src="./bolt-up-left-removebg-preview.png " alt="">
+							<img src="./bolt-up-left-removebg-preview.png " alt="" class="float-end">
+						</div>
+						<img src="{{ asset('images/profile-picture.png') }}" alt="" class="m-4" style="width: 150px;">
+						<div>
+							<img src="./bolt-up-left-removebg-preview.png " alt="">
+							<img src="./bolt-up-left-removebg-preview.png " alt="" class="float-end">
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<table class="table-active table-bordered border-secondary d-sm-none d-md-block d-none d-sm-block">
+			<tr>
+
+				<th class="text-secondary p-2 px-5 ps-3">
+					find me in:
+				</th>
+
+				<th>
+					<a href="# " class=" p-2"><img src="./Frame.png" alt=""></a>
+				</th>
+				<th>
+					<a href="# " class="text text-secondary p-5">
+						<svg
+							xmlns="http://www.w3.org/2000/svg" height="1.25em" viewbox="0 0 448 512">
+							<!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+							<style>
+								svg {
+									fill: #607b96
+								}
+							</style>
+							<path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+						</svg>
+					</a>
+				</th>
+
+				<th class="w-100"></th>
+
+				<th>
+					<a href="# " class="text text-secondary px-4">@ADEM-SASSI
+						<svg
+							xmlns="http://www.w3.org/2000/svg" height="1.25em" viewbox="0 0 512 512">
+							<!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+							<style>
+								svg {
+									fill: #607b96
+								}
+							</style>
+							<path d="M503.5 204.6L502.8 202.8L433.1 21.02C431.7 17.45 429.2 14.43 425.9 12.38C423.5 10.83 420.8 9.865 417.9 9.57C415 9.275 412.2 9.653 409.5 10.68C406.8 11.7 404.4 13.34 402.4 15.46C400.5 17.58 399.1 20.13 398.3 22.9L351.3 166.9H160.8L113.7 22.9C112.9 20.13 111.5 17.59 109.6 15.47C107.6 13.35 105.2 11.72 102.5 10.7C99.86 9.675 96.98 9.295 94.12 9.587C91.26 9.878 88.51 10.83 86.08 12.38C82.84 14.43 80.33 17.45 78.92 21.02L9.267 202.8L8.543 204.6C-1.484 230.8-2.72 259.6 5.023 286.6C12.77 313.5 29.07 337.3 51.47 354.2L51.74 354.4L52.33 354.8L158.3 434.3L210.9 474L242.9 498.2C246.6 500.1 251.2 502.5 255.9 502.5C260.6 502.5 265.2 500.1 268.9 498.2L300.9 474L353.5 434.3L460.2 354.4L460.5 354.1C482.9 337.2 499.2 313.5 506.1 286.6C514.7 259.6 513.5 230.8 503.5 204.6z"/>
+						</svg>
+					</a>
+				</th>
+
+			</tr>
+
+
+		</table>
+	</div>
+	<div class="cadre d-block d-sm-none mx-5">
+		<p class="  text-white  d-flex ">Hi all. I am
+		</p>
+
+		<h1 class="  text-white display-1">ADEM SASSI</h1>
+		<h4 class=" text-primary mb-5 ">> Front-end developer</h4>
+
+		<p class="text-secondary">// you can also see it on my Github page</p>
+		<p class="marginneb">
+			<span class="text-primary">const</span>
+			<span class="text-success">gitLabLink</span>
+			<span class="text-white">=</span>
+			<span class="text-danger ">https://gitlab.com</span>
+			<br><span class="text-danger">/ADEM-SASSI</span>
+
+
+		</p>
+
+		<div id="hiddenSymbol">&#x1F578;</div>
+		<p id="hiddenMessage"></p>
+
+	{% endblock %}

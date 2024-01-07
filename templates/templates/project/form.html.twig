@@ -1,0 +1,39 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+<div>
+	{{parent()}}
+	{% if type == "create" %}
+		<h1 class="text-white">create a project Sir!</h1>
+	{% else %}
+		update 
+		<p class="text-white"> {{ project.name }}</p>
+	{% endif %}
+{% endblock %}
+
+{% block body %}
+	<h1>
+		{% if type == "create" %}
+<h1 class="text-white">create a project Sir!</h1>
+		{% else %}
+update			
+<p class="text-white"> {{ project.name }}</p>
+		{% endif %}
+	</h1>
+	<div class="text-white">
+	<p class="text-white"> {{form_start(form)}}</p>
+	<p > {{form_row(form.name)}}</p>
+	{{form_row(form.image)}}
+	{{form_rest(form)}}
+	</div>
+	<div class='text-center'>
+	{% if type == "create" %}
+		<input type="submit" value="Créer" class="btn btn-primary">
+	{% else %}
+		<input type="submit" value="Modifier" class="btn btn-warning">
+	{% endif %}
+	<a href="{{ asset('/') }}" class='btn btn-primary'>Back to home champ</a>
+	</div>
+
+	{{form_end(form)}}
+{% endblock %}

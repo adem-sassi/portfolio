@@ -1,0 +1,358 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<div>
+
+		<div class="d-none d-sm-block d-xs-block">
+			<div class="collapse" id="navbarToggleExternalContent" data-bs-theme="secondary">
+				<div class="bg-secondary p-4">
+					<a href="{{ asset('/') }}">_hello</a>
+					<br>
+					<a href="{{ asset('/about') }}">_about-me</a>
+					<br>
+					<a href="./project.html">_projects</a>
+					<br>
+					<a href="./contact.html">_contact-me</a>
+					<span class="text-body-secondary">Toggleable via the navbar brand.</span>
+				</div>
+			</div>
+		</div>
+
+		<nav class="navbar navbar-dark bg-secondary">
+			<div class="container-fluid">
+				<button class="navbar-toggler d-sm-block d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			</div>
+		</nav>
+	</div>
+	<div class="cadre  d-sm-none d-md-block d-none d-sm-block ">
+		<table class="table-active table-bordered border-secondary d-sm-none d-md-block d-none d-sm-block">
+			<tr>
+
+				<th class="text-secondary p-2 pp-154 ps-3">
+					adem sassi</th>
+
+				<th>
+					<a href="{{ asset('/') }}" class="text text-secondary   p-4">_hello</a>
+				</th>
+				<th>
+					<a href="{{ asset('/about') }} " class="text text-secondary p-5">_about-me</a>
+				</th>
+				<th>
+					<a href="# " class="text text-white  pe-5 ps-5 pb-2 border-bottom border-color">_projects</a>
+				</th>
+                <th>
+					<a href="{{ asset('/skills') }} " class="text text-secondary p-5">_skills</a>
+				</th>
+
+				<th class="w-100"></th>
+				<th>
+					{% if is_granted('ROLE_ADMIN') %}
+						<div class="mt-3">
+							<a href="/create" class="btn text-secondary">create</a>
+
+					{% endif %}
+					</tr>
+
+
+				</table>
+				<table class="table-active table-bordered border-secondary text-white d-sm-none d-md-block d-none d-sm-block">
+
+					<th colspan="2" class="align-text-top">
+						<svg xmlns="http://www.w3.org/2000/svg" width="9" height="7" viewbox="0 0 9 7" fill="none">
+							<path d="M4.74998 6.65186L0.499969 0.651856L9 0.651855L4.74998 6.65186Z" fill="white"/>
+						</svg>
+						<span>
+							projects</span>
+					</th>
+					<th class=" text-secondary">Power-Apps,HTML,CSS,JAVA-SCRIPT
+						<img src="./close-icon.png" alt="" class="float-end mx-2">
+					</th>
+
+					<tr>
+
+						<td class="float-start border-start-0 border-end-0 ">
+							<img src="./Check.png" alt="">
+							<svg
+								xmlns="http://www.w3.org/2000/svg" height="1.25em" viewbox="0 0 384 512">
+								<!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+								<style>
+									svg {
+										fill: #a2b8cd
+									}
+								</style>
+								<path d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"/>
+							</svg>
+							<span class="text-white">
+								HTML</span>
+							<br>
+							<img src="./Check2.png" alt="">
+							<svg
+								xmlns="http://www.w3.org/2000/svg" height="1em" viewbox="0 0 448 512">
+								<!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+								<style>
+									svg {
+										fill: #3b5268
+									}
+								</style>
+								<path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"/>
+							</svg>
+							<span class="text-secondary">PYTHON</span>
+							<br>
+							<div class="text-secondary">
+								<img src="./Check.png" alt="">
+								<svg
+									xmlns="http://www.w3.org/2000/svg" height="1.25em" viewbox="0 0 512 512">
+									<!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<style>
+										svg {
+											fill: #a2b8cd
+										}
+									</style>
+
+									<path d="M480 32l-64 368-223.3 80L0 400l19.6-94.8h82l-8 40.6L210 390.2l134.1-44.4 18.8-97.1H29.5l16-82h333.7l10.5-52.7H56.3l16.3-82H480z"/>
+								</svg>
+								<span class="text-white">CSS</span>
+								<br>
+								<img src="./Check.png" alt="">
+								<svg
+									xmlns="http://www.w3.org/2000/svg" height="1em" viewbox="0 0 448 512">
+									<!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<style>
+										svg {
+											fill: #536579
+										}
+									</style>
+									<path d="M0 32v448h448V32H0zm243.8 349.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z"/>
+								</svg>
+								<span class="text-white">JAVA-SCRIPT</span>
+								<br>
+								<img src="./Check.png" alt="">
+								<img src="./power-apps.png" alt="" style="width: 24px;">
+								<span class="text-white">Power-Apps</span>
+
+							</div>
+						</td>
+						<th class="border-start-0"></th>
+						<th class="col-10 m-5">
+
+							<div class="row row-cols-1 row-cols-md-2 g-4 p-0 m-5">
+								{% for project in projects %}
+									<div class="col-md-4 mb-4">
+										<div class="card">
+											<img src="{{ asset('uploads/images/' ~ project.image) }}" class="card-img-top" alt="{{ project.name }}">
+											<div class="card-body text-center">
+												<h5 class="card-title text-white">{{ project.name }}</h5>
+												<p class="card-text text-white">{{ project.description }}</p>
+												<p class="card-text text-white">
+													{{ project.date ? project.date|date('Y-m-d H:i:s') : '' }}</p>
+												<div class="btn-group" role="group" aria-label="Project Actions">
+													<a href="{{ path('delete', {'id': project.id}) }}" class="btn btn-danger">Delete</a>
+													<a href="{{ path('update', {'id': project.id}) }}" class="btn btn-primary">Update</a>
+													<a href="{{ path('read', {'id': project.id}) }}" class="btn btn-success">Read</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+
+						</th>
+						<table class="table-active table-bordered border-secondary  d-sm-none d-md-block d-none d-sm-block">
+							<tr>
+
+								<th class="text-secondary p-2 px-5 ps-3">
+									find me in:
+								</th>
+
+								<th>
+									<a href="# " class=" p-2"><img src="./Frame.png" alt=""></a>
+								</th>
+								<th>
+									<a href="# " class="text text-secondary p-2">
+										<svg
+											xmlns="http://www.w3.org/2000/svg" height="1.25em" viewbox="0 0 448 512">
+											<!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+											<style>
+												svg {
+													fill: #607b96
+												}
+											</style>
+											<path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+										</svg>
+									</a>
+								</th>
+
+								<th class="w-100"></th>
+
+								<th>
+									<a href="# " class="text text-secondary px-4">@ADEM-SASSI
+										<svg
+											xmlns="http://www.w3.org/2000/svg" height="1.25em" viewbox="0 0 512 512">
+											<!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+											<style>
+												svg {
+													fill: #607b96
+												}
+											</style>
+											<path d="M503.5 204.6L502.8 202.8L433.1 21.02C431.7 17.45 429.2 14.43 425.9 12.38C423.5 10.83 420.8 9.865 417.9 9.57C415 9.275 412.2 9.653 409.5 10.68C406.8 11.7 404.4 13.34 402.4 15.46C400.5 17.58 399.1 20.13 398.3 22.9L351.3 166.9H160.8L113.7 22.9C112.9 20.13 111.5 17.59 109.6 15.47C107.6 13.35 105.2 11.72 102.5 10.7C99.86 9.675 96.98 9.295 94.12 9.587C91.26 9.878 88.51 10.83 86.08 12.38C82.84 14.43 80.33 17.45 78.92 21.02L9.267 202.8L8.543 204.6C-1.484 230.8-2.72 259.6 5.023 286.6C12.77 313.5 29.07 337.3 51.47 354.2L51.74 354.4L52.33 354.8L158.3 434.3L210.9 474L242.9 498.2C246.6 500.1 251.2 502.5 255.9 502.5C260.6 502.5 265.2 500.1 268.9 498.2L300.9 474L353.5 434.3L460.2 354.4L460.5 354.1C482.9 337.2 499.2 313.5 506.1 286.6C514.7 259.6 513.5 230.8 503.5 204.6z"/>
+										</svg>
+									</a>
+								</th>
+
+							</tr>
+						</table>
+					</tr>
+				</div>
+			</th>
+		</tr>
+	</td>
+
+
+	<div class="accordion 	d-block d-sm-none bg-secondary mt-5" id="accordionPanelsStayOpenExample">
+		<div class="accordion-item ">
+			<h2 class="accordion-header bg">
+				<button class="accordion-button bg-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+					<span class="text-white">Accordion Item #1</span>
+				</button>
+			</h2>
+			<div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+				<div class="accordion-body bg-secondary">
+					<img src="./Check.png" alt="">
+					<svg
+						xmlns="http://www.w3.org/2000/svg" height="1.25em" viewbox="0 0 384 512">
+						<!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+						<style>
+							svg {
+								fill: #a2b8cd
+							}
+						</style>
+						<path d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"/>
+					</svg>
+					<span class="text-white">
+						HTML</span>
+					<br>
+					<img src="./Check2.png" alt="">
+					<svg
+						xmlns="http://www.w3.org/2000/svg" height="1em" viewbox="0 0 448 512">
+						<!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+						<style>
+							svg {
+								fill: #3b5268
+							}
+						</style>
+						<path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"/>
+					</svg>
+					<span class="text-secondary">PYTHON</span>
+					<br>
+					<div class="text-secondary">
+						<img src="./Check.png" alt="">
+						<svg
+							xmlns="http://www.w3.org/2000/svg" height="1.25em" viewbox="0 0 512 512">
+							<!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+							<style>
+								svg {
+									fill: #a2b8cd
+								}
+							</style>
+
+							<path d="M480 32l-64 368-223.3 80L0 400l19.6-94.8h82l-8 40.6L210 390.2l134.1-44.4 18.8-97.1H29.5l16-82h333.7l10.5-52.7H56.3l16.3-82H480z"/>
+						</svg>
+						<span class="text-white">CSS</span>
+						<br>
+						<img src="./Check.png" alt="">
+						<svg
+							xmlns="http://www.w3.org/2000/svg" height="1em" viewbox="0 0 448 512">
+							<!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+							<style>
+								svg {
+									fill: #536579
+								}
+							</style>
+							<path d="M0 32v448h448V32H0zm243.8 349.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z"/>
+						</svg>
+						<span class="text-white">JAVA-SCRIPT</span>
+						<br>
+						<img src="./Check.png" alt="">
+						<img src="./power-apps.png" alt="" style="width: 24px;">
+						<span class="text-white">Power-Apps</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="text-secondary">
+			<div class="row">
+				{% for project in projects %}
+					<div class="col-md-4 mb-4">
+						<div class="card">
+							<img src="{{ asset('uploads/images/' ~ project.image) }}" class="card-img-top" alt="{{ project.name }}">
+							<div class="card-body">
+								<h5 class="card-title">{{ project.name }}</h5>
+								<p class="card-text">{{ project.description }}</p>
+								<p class="card-text">
+									<small class="text-muted">{{ project.date ? project.date|date('Y-m-d H:i:s') : '' }}</small>
+								</p>
+								<div class="btn-group" role="group" aria-label="Project Actions">
+									<a href="{{ path('delete', {'id': project.id}) }}" class="btn btn-danger">Delete</a>
+									<a href="{{ path('update', {'id': project.id}) }}" class="btn btn-primary">Update</a>
+									<a href="{{ path('read', {'id': project.id}) }}" class="btn btn-success">Read</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+
+
+				<table class="table-active table-bordered border-secondary d-block d-sm-none">
+					<tr style="width: 100%;">
+
+						<th class="text-secondary p-2 px-5 ps-3">
+							find me in:
+						</th>
+
+						<th>
+							<a href="# " class=" p-2"><img src="./Frame.png" alt=""></a>
+						</th>
+						<th>
+							<a href="# " class="text text-secondary p-2">
+								<svg
+									xmlns="http://www.w3.org/2000/svg" height="1.25em" viewbox="0 0 448 512">
+									<!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<style>
+										svg {
+											fill: #607b96
+										}
+									</style>
+									<path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+								</svg>
+							</a>
+						</th>
+
+
+						<th>
+							<a href="# " class="text text-secondary px-4">
+								<svg
+									xmlns="http://www.w3.org/2000/svg" height="1.25em" viewbox="0 0 512 512">
+									<!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+									<style>
+										svg {
+											fill: #607b96
+										}
+									</style>
+									<path d="M503.5 204.6L502.8 202.8L433.1 21.02C431.7 17.45 429.2 14.43 425.9 12.38C423.5 10.83 420.8 9.865 417.9 9.57C415 9.275 412.2 9.653 409.5 10.68C406.8 11.7 404.4 13.34 402.4 15.46C400.5 17.58 399.1 20.13 398.3 22.9L351.3 166.9H160.8L113.7 22.9C112.9 20.13 111.5 17.59 109.6 15.47C107.6 13.35 105.2 11.72 102.5 10.7C99.86 9.675 96.98 9.295 94.12 9.587C91.26 9.878 88.51 10.83 86.08 12.38C82.84 14.43 80.33 17.45 78.92 21.02L9.267 202.8L8.543 204.6C-1.484 230.8-2.72 259.6 5.023 286.6C12.77 313.5 29.07 337.3 51.47 354.2L51.74 354.4L52.33 354.8L158.3 434.3L210.9 474L242.9 498.2C246.6 500.1 251.2 502.5 255.9 502.5C260.6 502.5 265.2 500.1 268.9 498.2L300.9 474L353.5 434.3L460.2 354.4L460.5 354.1C482.9 337.2 499.2 313.5 506.1 286.6C514.7 259.6 513.5 230.8 503.5 204.6z"/>
+								</svg>
+							</a>
+						</th>
+
+					</tr>
+
+
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+
+</div>{% endblock %}

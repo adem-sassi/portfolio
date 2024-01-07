@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	{{parent()}}
+	{% if type == "create2" %}
+		Créer une liste
+	{% else %}
+		Modifier la liste
+		{{ skill.name }}
+	{% endif %}
+{% endblock %}
+
+{% block body %}
+	<h1 class="text text-white">
+		{% if type == "create2" %}
+			Create a new skill Sir!
+		{% else %}
+Update			{{ skill.name }}
+		{% endif %}
+	</h1>
+	<div class='text text-white'>
+	{{form_start(form)}}
+	{{form_row(form.name)}}
+	{{form_row(form.image)}}
+	{{form_rest(form)}}
+	<div class='text-center'>
+	{% if type == "create2" %}
+		<input type="submit" value="Create" class="btn btn-primary">
+	{% else %}
+		<input type="submit" value="update" class="btn btn-warning">
+	{% endif %}
+	<a href="{{ asset('/') }}" class='btn btn-primary'>Back to home champ</a>
+	</div>
+
+	</div>
+	{{form_end(form)}}
+{% endblock %}
