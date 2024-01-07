@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	{{parent()}}
+	{% if type == "create" %}
+		Créer une liste
+	{% else %}
+		Modifier la liste
+		{{ project.name }}
+	{% endif %}
+{% endblock %}
+
+{% block body %}
+	<h1>
+		{% if type == "create" %}
+			Créer une liste
+		{% else %}
+			Modifier la liste
+			{{ project.name }}
+		{% endif %}
+	</h1>
+	{{form_start(form)}}
+	{{form_row(form.name)}}
+	{{form_row(form.image)}}
+	{{form_rest(form)}}
+	{% if type == "create" %}
+		<input type="submit" value="Créer" class="btn btn-success">
+	{% else %}
+		<input type="submit" value="Modifier" class="btn btn-warning">
+	{% endif %}
+	{{form_end(form)}}
+{% endblock %}

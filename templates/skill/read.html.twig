@@ -1,0 +1,42 @@
+{# templates/skill/read.html.twig #}
+
+
+
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <h1>Project Details</h1>
+
+
+
+    {% if skill is not null %}
+
+        <dl>
+
+            <dt>Name:</dt>
+
+            <dd>{{ skill.name }}</dd>
+
+
+
+            <dt>Description:</dt>
+
+            <dd>{{ skill.description }}</dd>
+
+            {# Ajoutez d'autres propriétés selon votre entité Project #}
+
+        </dl>
+
+    {% else %}
+
+        <p>Skill not found.</p>
+
+    {% endif %}
+
+
+
+    <a href="{{ path('read_all') }}">Back to List</a>
+
+{% endblock %}

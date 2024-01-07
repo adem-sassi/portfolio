@@ -1,0 +1,49 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    {{ parent() }}
+    Créer un compte
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h1 class="card-title mb-4">Créer un compte</h1>
+
+                        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+                        <div class="mb-3">
+                            {{ form_row(form.email, {'attr': {'class': 'form-control', 'placeholder': 'Adresse e-mail'}}) }}
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form_row(form.password, {'attr': {'class': 'form-control', 'placeholder': 'Mot de passe'}}) }}
+                            <!-- Ajoutez un élément pour afficher le mot de passe -->
+                            <span id="displayPassword"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-success">Créer</button>
+
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Écoutez les changements de saisie dans le champ de mot de passe
+        document.addEventListener('DOMContentLoaded', function() {
+            const passwordInput = document.querySelector('input[name="form[password]"]');
+            const displayPassword = document.getElementById('displayPassword');
+
+            passwordInput.addEventListener('input', function(event) {
+                // Mettez à jour le contenu de l'élément span avec la valeur du champ de mot de passe
+                displayPassword.textContent = event.target.value;
+            });
+        });
+    </script>
+{% endblock %}
