@@ -14,7 +14,7 @@
     {% if project is not null %}
 
         <dl>
-                    <img src="{{ asset('uploads/images/' ~ project.image) }}" class="card-img-top w-25" alt="{{ project.name }}">
+                    <img loading="lazy" decoding="async" src="{{ asset('uploads/images/' ~ project.image) }}" class="card-img-top w-25" alt="{{ project.name }}">
 
             <dt>Name:</dt>
 
